@@ -1,1 +1,1 @@
-angular.module('demo', ['toggle-switch']);
+angular.module('demo', ['ngSanitize', 'toggle-switch']);
