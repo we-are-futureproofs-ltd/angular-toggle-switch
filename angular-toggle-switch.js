@@ -8,7 +8,8 @@ angular.module('toggle-switch', ['ng']).directive('toggleSwitch', function ($com
       onLabel: '@',
       offLabel: '@',
       knobLabel: '@',
-      html: '='
+      html: '=',
+      onChange: '&'
     },
     template: '<div class="switch" ng-click="toggle()" ng-class="{ \'disabled\': disabled }"><div class="switch-animate" ng-class="{\'switch-off\': !model, \'switch-on\': model}"><span class="switch-left"></span><span class="knob"></span><span class="switch-right"></span></div></div>',
     controller: function($scope) {
@@ -16,6 +17,7 @@ angular.module('toggle-switch', ['ng']).directive('toggleSwitch', function ($com
         if(!$scope.disabled) {
           $scope.model = !$scope.model;
         }
+        $scope.onChange();
       };
     },
     compile: function(element, attrs) {
