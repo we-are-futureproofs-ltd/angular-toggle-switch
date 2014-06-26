@@ -95,7 +95,7 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.switch {
+.ats-switch {
   display: inline-block;
   cursor: pointer;
   -webkit-border-radius: 5px;
@@ -119,7 +119,7 @@
   -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
-.switch .knob {
+.ats-switch .knob {
   text-align: center;
   z-index: 100;
   width: 34%;
@@ -141,21 +141,21 @@
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
-.switch .knob:hover,
-.switch .knob:focus,
-.switch .knob:active,
-.switch .knob.active,
-.switch .knob.disabled,
-.switch .knob[disabled] {
+.ats-switch .knob:hover,
+.ats-switch .knob:focus,
+.ats-switch .knob:active,
+.ats-switch .knob.active,
+.ats-switch .knob.disabled,
+.ats-switch .knob[disabled] {
   color: #333333;
   background-color: #e6e6e6;
   *background-color: #d9d9d9;
 }
-.switch .knob:active,
-.switch .knob.active {
+.ats-switch .knob:active,
+.ats-switch .knob.active {
   background-color: #cccccc \9;
 }
-.switch span.switch-left {
+.ats-switch span.switch-left {
   -webkit-border-top-left-radius: 4px;
   -moz-border-radius-topleft: 4px;
   border-top-left-radius: 4px;
@@ -163,7 +163,7 @@
   -moz-border-radius-bottomleft: 4px;
   border-bottom-left-radius: 4px;
 }
-.switch span.switch-right {
+.ats-switch span.switch-right {
   color: #333333;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
   background-color: #f0f0f0;
@@ -180,21 +180,21 @@
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
-.switch span.switch-right:hover,
-.switch span.switch-right:focus,
-.switch span.switch-right:active,
-.switch span.switch-right.active,
-.switch span.switch-right.disabled,
-.switch span.switch-right[disabled] {
+.ats-switch span.switch-right:hover,
+.ats-switch span.switch-right:focus,
+.ats-switch span.switch-right:active,
+.ats-switch span.switch-right.active,
+.ats-switch span.switch-right.disabled,
+.ats-switch span.switch-right[disabled] {
   color: #333333;
   background-color: #ffffff;
   *background-color: #f2f2f2;
 }
-.switch span.switch-right:active,
-.switch span.switch-right.active {
+.ats-switch span.switch-right:active,
+.ats-switch span.switch-right.active {
   background-color: #e6e6e6 \9;
 }
-.switch.switch-primary span.switch-left {
+.ats-switch.switch-primary span.switch-left {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #005fcc;
@@ -211,21 +211,21 @@
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
-.switch.switch-primary span.switch-left:hover,
-.switch.switch-primary span.switch-left:focus,
-.switch.switch-primary span.switch-left:active,
-.switch.switch-primary span.switch-left.active,
-.switch.switch-primary span.switch-left.disabled,
-.switch.switch-primary span.switch-left[disabled] {
+.ats-switch.switch-primary span.switch-left:hover,
+.ats-switch.switch-primary span.switch-left:focus,
+.ats-switch.switch-primary span.switch-left:active,
+.ats-switch.switch-primary span.switch-left.active,
+.ats-switch.switch-primary span.switch-left.disabled,
+.ats-switch.switch-primary span.switch-left[disabled] {
   color: #ffffff;
   background-color: #0088cc;
   *background-color: #0077b3;
 }
-.switch.switch-primary span.switch-left:active,
-.switch.switch-primary span.switch-left.active {
+.ats-switch.switch-primary span.switch-left:active,
+.ats-switch.switch-primary span.switch-left.active {
   background-color: #006699 \9;
 }
-.switch.switch-info span.switch-left {
+.ats-switch.switch-info span.switch-left {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #41a7c5;
@@ -242,21 +242,21 @@
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
-.switch.switch-info span.switch-left:hover,
-.switch.switch-info span.switch-left:focus,
-.switch.switch-info span.switch-left:active,
-.switch.switch-info span.switch-left.active,
-.switch.switch-info span.switch-left.disabled,
-.switch.switch-info span.switch-left[disabled] {
+.ats-switch.switch-info span.switch-left:hover,
+.ats-switch.switch-info span.switch-left:focus,
+.ats-switch.switch-info span.switch-left:active,
+.ats-switch.switch-info span.switch-left.active,
+.ats-switch.switch-info span.switch-left.disabled,
+.ats-switch.switch-info span.switch-left[disabled] {
   color: #ffffff;
   background-color: #5bc0de;
   *background-color: #46b8da;
 }
-.switch.switch-info span.switch-left:active,
-.switch.switch-info span.switch-left.active {
+.ats-switch.switch-info span.switch-left:active,
+.ats-switch.switch-info span.switch-left.active {
   background-color: #31b0d5 \9;
 }
-.switch.switch-success span.switch-left {
+.ats-switch.switch-success span.switch-left {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #58b058;
@@ -273,21 +273,21 @@
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
-.switch.switch-success span.switch-left:hover,
-.switch.switch-success span.switch-left:focus,
-.switch.switch-success span.switch-left:active,
-.switch.switch-success span.switch-left.active,
-.switch.switch-success span.switch-left.disabled,
-.switch.switch-success span.switch-left[disabled] {
+.ats-switch.switch-success span.switch-left:hover,
+.ats-switch.switch-success span.switch-left:focus,
+.ats-switch.switch-success span.switch-left:active,
+.ats-switch.switch-success span.switch-left.active,
+.ats-switch.switch-success span.switch-left.disabled,
+.ats-switch.switch-success span.switch-left[disabled] {
   color: #ffffff;
   background-color: #62c462;
   *background-color: #4fbd4f;
 }
-.switch.switch-success span.switch-left:active,
-.switch.switch-success span.switch-left.active {
+.ats-switch.switch-success span.switch-left:active,
+.ats-switch.switch-success span.switch-left.active {
   background-color: #42b142 \9;
 }
-.switch.switch-warning span.switch-left {
+.ats-switch.switch-warning span.switch-left {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #f9a123;
@@ -304,21 +304,21 @@
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
-.switch.switch-warning span.switch-left:hover,
-.switch.switch-warning span.switch-left:focus,
-.switch.switch-warning span.switch-left:active,
-.switch.switch-warning span.switch-left.active,
-.switch.switch-warning span.switch-left.disabled,
-.switch.switch-warning span.switch-left[disabled] {
+.ats-switch.switch-warning span.switch-left:hover,
+.ats-switch.switch-warning span.switch-left:focus,
+.ats-switch.switch-warning span.switch-left:active,
+.ats-switch.switch-warning span.switch-left.active,
+.ats-switch.switch-warning span.switch-left.disabled,
+.ats-switch.switch-warning span.switch-left[disabled] {
   color: #ffffff;
   background-color: #fbb450;
   *background-color: #faa937;
 }
-.switch.switch-warning span.switch-left:active,
-.switch.switch-warning span.switch-left.active {
+.ats-switch.switch-warning span.switch-left:active,
+.ats-switch.switch-warning span.switch-left.active {
   background-color: #fa9f1e \9;
 }
-.switch.switch-danger span.switch-left {
+.ats-switch.switch-danger span.switch-left {
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
   background-color: #d14641;
@@ -335,21 +335,21 @@
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
-.switch.switch-danger span.switch-left:hover,
-.switch.switch-danger span.switch-left:focus,
-.switch.switch-danger span.switch-left:active,
-.switch.switch-danger span.switch-left.active,
-.switch.switch-danger span.switch-left.disabled,
-.switch.switch-danger span.switch-left[disabled] {
+.ats-switch.switch-danger span.switch-left:hover,
+.ats-switch.switch-danger span.switch-left:focus,
+.ats-switch.switch-danger span.switch-left:active,
+.ats-switch.switch-danger span.switch-left.active,
+.ats-switch.switch-danger span.switch-left.disabled,
+.ats-switch.switch-danger span.switch-left[disabled] {
   color: #ffffff;
   background-color: #ee5f5b;
   *background-color: #ec4844;
 }
-.switch.switch-danger span.switch-left:active,
-.switch.switch-danger span.switch-left.active {
+.ats-switch.switch-danger span.switch-left:active,
+.ats-switch.switch-danger span.switch-left.active {
   background-color: #e9322d \9;
 }
-.switch.switch-default span.switch-left {
+.ats-switch.switch-default span.switch-left {
   color: #333333;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
   background-color: #f0f0f0;
@@ -366,17 +366,17 @@
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
-.switch.switch-default span.switch-left:hover,
-.switch.switch-default span.switch-left:focus,
-.switch.switch-default span.switch-left:active,
-.switch.switch-default span.switch-left.active,
-.switch.switch-default span.switch-left.disabled,
-.switch.switch-default span.switch-left[disabled] {
+.ats-switch.switch-default span.switch-left:hover,
+.ats-switch.switch-default span.switch-left:focus,
+.ats-switch.switch-default span.switch-left:active,
+.ats-switch.switch-default span.switch-left.active,
+.ats-switch.switch-default span.switch-left.disabled,
+.ats-switch.switch-default span.switch-left[disabled] {
   color: #333333;
   background-color: #ffffff;
   *background-color: #f2f2f2;
 }
-.switch.switch-default span.switch-left:active,
-.switch.switch-default span.switch-left.active {
+.ats-switch.switch-default span.switch-left:active,
+.ats-switch.switch-default span.switch-left.active {
   background-color: #e6e6e6 \9;
 }
