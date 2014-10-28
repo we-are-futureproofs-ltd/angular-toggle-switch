@@ -1,4 +1,4 @@
-angular.module('toggle-switch', ['ng']).directive('toggleSwitch', function($compile) {
+angular.module('toggle-switch', ['ng']).directive('toggleSwitch', ['$compile', function($compile) {
     return {
         restrict: 'EA',
         replace: true,
@@ -12,14 +12,14 @@ angular.module('toggle-switch', ['ng']).directive('toggleSwitch', function($comp
             onChange: '&'
         },
         template: '<div class="ats-switch" ng-click="toggle()" ng-class="{ \'disabled\': disabled }"><div class="switch-animate" ng-class="{\'switch-off\': !model, \'switch-on\': model}"><span class="switch-left"></span><span class="knob"></span><span class="switch-right"></span></div></div>',
-        controller: function($scope) {
+        controller: ['$scope', function($scope) {
             $scope.toggle = function toggle() {
                 if (!$scope.disabled) {
                     $scope.model = !$scope.model;
                 }
                 $scope.onChange();
             };
-        },
+        }],
         compile: function(element, attrs) {
             if (angular.isUndefined(attrs.onLabel)) {
                 attrs.onLabel = 'On';
@@ -73,4 +73,4 @@ angular.module('toggle-switch', ['ng']).directive('toggleSwitch', function($comp
             };
         }
     };
-});
+}]);
