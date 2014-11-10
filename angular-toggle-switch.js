@@ -4,17 +4,17 @@ angular.module('toggle-switch', ['ng']).directive('toggleSwitch', function($comp
         replace: true,
         scope: {
             model: '=',
-            disabled: '@',
+            isDisabled: '@',
             onLabel: '@',
             offLabel: '@',
             knobLabel: '@',
             html: '=',
             onChange: '&'
         },
-        template: '<div class="ats-switch" ng-click="toggle()" ng-class="{ \'disabled\': disabled }"><div class="switch-animate" ng-class="{\'switch-off\': !model, \'switch-on\': model}"><span class="switch-left"></span><span class="knob"></span><span class="switch-right"></span></div></div>',
+        template: '<div class="ats-switch" ng-click="toggle()" ng-class="{ \'disabled\': isDisabled }"><div class="switch-animate" ng-class="{\'switch-off\': !model, \'switch-on\': model}"><span class="switch-left"></span><span class="knob"></span><span class="switch-right"></span></div></div>',
         controller: function($scope) {
             $scope.toggle = function toggle() {
-                if (!$scope.disabled) {
+                if (!$scope.isDisabled) {
                     $scope.model = !$scope.model;
                 }
                 $scope.onChange();
@@ -30,8 +30,8 @@ angular.module('toggle-switch', ['ng']).directive('toggleSwitch', function($comp
             if (angular.isUndefined(attrs.knobLabel)) {
                 attrs.knobLabel = '\u00a0';
             }
-            if (angular.isUndefined(attrs.disabled)) {
-                attrs.disabled = false;
+            if (angular.isUndefined(attrs.isDisabled)) {
+                attrs.isDisabled = false;
             }
             if (angular.isUndefined(attrs.html)) {
                 attrs.html = false;
