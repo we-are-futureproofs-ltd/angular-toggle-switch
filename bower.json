@@ -20,5 +20,8 @@
     "karma.conf.js",
     "package.json",
     ".travis.yml"
-  ]
+  ],
+  "dependencies": {
+    "angular-toggle-switch": "https://github.com/onemenny/angular-toggle-switch.git#~0.5.1"
+  }
 }
