@@ -1,4 +1,4 @@
-angular.module('toggle-switch', ['ng']).directive('toggleSwitch', ['$compile', function($compile) {
+angular.module('toggle-switch', ['ng']).directive('toggleSwitch', ['$compile','$translate', function($compile,$translate) {
     return {
         restrict: 'EA',
         replace: true,
@@ -23,12 +23,18 @@ angular.module('toggle-switch', ['ng']).directive('toggleSwitch', ['$compile', f
         compile: function(element, attrs) {
             if (angular.isUndefined(attrs.onLabel)) {
                 attrs.onLabel = 'On';
+            }else{
+                attrs.onLabel = $translate.instant(attrs.onLabel);
             }
             if (angular.isUndefined(attrs.offLabel)) {
                 attrs.offLabel = 'Off';
+            }else{
+                attrs.offLabel = $translate.instant(attrs.offLabel);
             }
             if (angular.isUndefined(attrs.knobLabel)) {
                 attrs.knobLabel = '\u00a0';
+            }else{
+                attrs.knobLabel = $translate.instant(attrs.knobLabel);
             }
             if (angular.isUndefined(attrs.isDisabled)) {
                 attrs.isDisabled = false;
