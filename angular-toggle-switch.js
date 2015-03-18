@@ -21,6 +21,7 @@ angular.module('toggle-switch', ['ng']).directive('toggleSwitch', ['$compile','$
             };
         }],
         compile: function(element, attrs) {
+            //added support for $translate
             if (angular.isUndefined(attrs.onLabel)) {
                 attrs.onLabel = 'On';
             }else{
