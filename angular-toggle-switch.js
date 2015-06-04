@@ -53,6 +53,10 @@ angular.module('toggle-switch', ['ng']).directive('toggleSwitch', ['$compile', f
 					return viewValue;
 				});
 
+				ngModel.$viewChangeListeners.push(function() {
+					scope.$eval(attrs.ngChange);
+				});
+
 				ngModel.$render = function() {
 					scope.model = ngModel.$viewValue;
 				};
