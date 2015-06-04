@@ -11,7 +11,8 @@ angular.module('toggle-switch', ['ng']).directive('toggleSwitch', ['$compile', f
 			html: '=',
 			onChange: '&'
 		},
-		template: 	'<div class="ats-switch" ng-click="toggle()" ng-class="{ \'disabled\': isDisabled }">' +
+		template:
+					'<div class="ats-switch" ng-click="toggle()" ng-class="{ \'disabled\': isDisabled }">' +
 						'<div class="switch-animate" ng-class="{\'switch-off\': !model, \'switch-on\': model}">' +
 							'<span class="switch-left"></span>' +
 							'<span class="knob"></span>' +
