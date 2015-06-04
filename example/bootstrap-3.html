@@ -13,7 +13,7 @@
     angular.module('app', ['ngSanitize', 'toggle-switch']);
   </script>
 </head>
-<body>
+<body ng-init="switchStatus = true">
 
   <h2>
     Bootstrap 3 Style Example
@@ -34,6 +34,14 @@
     <div toggle-switch class="switch-small switch-primary" ng-model="switchStatus"></div>
     <div toggle-switch class="switch-mini switch-primary" ng-model="switchStatus"></div>
   </p>
+
+  <p>
+    <div toggle-switch class="switch-large switch-primary" ng-model="switchStatus" knob-label="" on-label="" off-label=""></div>
+    <div toggle-switch class="switch-primary" ng-model="switchStatus" knob-label="" on-label="" off-label=""></div>
+    <div toggle-switch class="switch-small switch-primary" ng-model="switchStatus" knob-label="" on-label="" off-label=""></div>
+    <div toggle-switch class="switch-mini switch-primary" ng-model="switchStatus" knob-label="" on-label="" off-label=""></div>
+  </p>
+
 
   <p>
     <div toggle-switch class="switch-primary" data-is-disabled="disabled" ng-model="switchStatus"></div>
