@@ -8,6 +8,7 @@ describe('Toggle Switch', function() {
   var htmlLabelsTemplate = '<toggle-switch ng-model="switchState" on-label="<i class=\'icon-ok icon-white\'></i>" off-label="<i class=\'icon-remove\'></i>">\n</toggle-switch>';
   var disabledTemplate = '<toggle-switch ng-model="switchState" is-disabled="isDisabled">\n</toggle-switch>';
   var changeTemplate = '<toggle-switch ng-model="switchState" ng-change="changedState()">\n</toggle-switch>';
+  var tabindexTemplate = '<toggle-switch ng-model="switchState" tabindex="2">\n</toggle-switch>';
 
   // Load up just our module
   beforeEach(module('toggle-switch'));
@@ -96,6 +97,48 @@ describe('Toggle Switch', function() {
     });
   });
 
+  describe('when a key is pressed', function() {
+    // Change state to true
+    beforeEach(function() {
+      $scope.$apply(function() {
+        $scope.switchState = false;
+      });
+      $scope.changedState = function(){};
+      spyOn($scope, 'changedState');
+    });
+
+    it('and it is "space" change handler gets called', function() {
+      var elm = compileDirective(changeTemplate, $scope);
+      var event = {
+        type: 'keypress',
+        charCode: 32
+      };
+      elm.triggerHandler(event);
+      expect($scope.changedState).toHaveBeenCalled();
+    });
+
+    it('and it is "space" but modifier is set do not call change handler', function() {
+      var elm = compileDirective(changeTemplate, $scope);
+      var event = {
+        type: 'keypress',
+        charCode: 32,
+        ctrlKey: true
+      };
+      elm.triggerHandler(event);
+      expect($scope.changedState).not.toHaveBeenCalled();
+    });
+
+    it('and it is not "space" do not call change handler', function() {
+      var elm = compileDirective(changeTemplate, $scope);
+      var event = {
+        type: 'keypress',
+        charCode: 12
+      };
+      elm.triggerHandler(event);
+      expect($scope.changedState).not.toHaveBeenCalled();
+    });
+  });
+
   describe('when there is a custom `on-label`', function () {
     // @TODO: figure out how to deal with html in Angular 1.2
     //describe('is html', function() {
@@ -147,4 +190,15 @@ describe('Toggle Switch', function() {
     });
   });
 
+  describe('tabindex is set', function() {
+    it('to default value', function() {
+      var elm = compileDirective(baseTemplate, $scope);
+      expect(elm.attr('tabindex')).toEqual('0');
+    });
+
+    it('to custom value', function() {
+      var elm = compileDirective(tabindexTemplate, $scope);
+      expect(elm.attr('tabindex')).toEqual('2');
+    });
+  });
 });
