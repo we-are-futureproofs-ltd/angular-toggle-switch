@@ -12,7 +12,7 @@ angular.module('toggle-switch', ['ng']).directive('toggleSwitch', ['$compile', f
 			onChange: '&'
 		},
 		template:
-					'<div class="ats-switch" ng-click="toggle()" ng-class="{ \'disabled\': isDisabled }">' +
+					'<div class="ats-switch" ng-click="toggle()" ng-keypress="onKeyPress($event)" ng-class="{ \'disabled\': isDisabled }" role="switch" aria-checked="{{!!model}}">' +
 						'<div class="switch-animate" ng-class="{\'switch-off\': !model, \'switch-on\': model}">' +
 							'<span class="switch-left"></span>' +
 							'<span class="knob"></span>' +
@@ -35,8 +35,12 @@ angular.module('toggle-switch', ['ng']).directive('toggleSwitch', ['$compile', f
 			if (angular.isUndefined(attrs.html)) {
 				attrs.html = false;
 			}
+			if (angular.isUndefined(attrs.tabindex)) {
+				attrs.tabindex = 0;
+			}
 
 			return function postLink(scope, iElement, iAttrs, ngModel) {
+				iElement.attr('tabindex', attrs.tabindex);
 
 				scope.toggle = function toggle() {
 					if (!scope.isDisabled) {
@@ -44,6 +48,13 @@ angular.module('toggle-switch', ['ng']).directive('toggleSwitch', ['$compile', f
 						ngModel.$setViewValue(scope.model);
 					}
 					scope.onChange();
+				};
+
+				var spaceCharCode = 32;
+				scope.onKeyPress = function onKeyPress($event) {
+					if ($event.charCode == spaceCharCode && !$event.altKey && !$event.ctrlKey && !$event.metaKey) {
+						scope.toggle();
+					}
 				};
 
 				ngModel.$formatters.push(function(modelValue) {
