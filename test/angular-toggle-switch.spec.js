@@ -56,9 +56,9 @@ describe('Toggle Switch', function() {
       $scope.$apply(function() {
         $scope.switchState = true;
       });
+      $scope.changedState = function(){};
+      spyOn($scope, 'changedState');
     });
-    $scope.changedState = function(){};
-    spyOn($scope, 'changedState');
 
     it('changes model to false when clicked', function() {
       var elm = compileDirective(baseTemplate, $scope);
