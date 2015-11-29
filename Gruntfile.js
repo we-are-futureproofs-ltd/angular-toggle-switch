@@ -36,7 +36,7 @@ module.exports = function (grunt) {
       all: ['Gruntfile.js', 'angular-toggle-switch.js', 'test/angular-toggle-switch.spec.js']
     },
 
-    ngmin: {
+    ngAnnotate: {
       dist: {
         files: {
           'angular-toggle-switch.min.js': ['angular-toggle-switch.js']
@@ -64,7 +64,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'jshint:all',
-    'ngmin',
+    'ngAnnotate',
     'uglify',
     'less'
   ]);
