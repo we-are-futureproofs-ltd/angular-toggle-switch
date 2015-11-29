@@ -1,4 +1,4 @@
-angular.module('toggle-switch', ['ng']).directive('toggleSwitch', ['$compile', function($compile) {
+angular.module('toggle-switch', ['ng']).directive('toggleSwitch', ['$compile, $translate', function($compile, $translate) {
 	return {
 		restrict: 'EA',
 		replace: true,
@@ -20,23 +20,27 @@ angular.module('toggle-switch', ['ng']).directive('toggleSwitch', ['$compile', f
 						'</div>' +
 					'</div>',
 		compile: function(element, attrs) {
+			//added support for $translate
 			if (angular.isUndefined(attrs.onLabel)) {
 				attrs.onLabel = 'On';
+			}else{
+				attrs.onLabel = $translate.instant(attrs.onLabel);
 			}
 			if (angular.isUndefined(attrs.offLabel)) {
 				attrs.offLabel = 'Off';
+			}else{
+				attrs.offLabel = $translate.instant(attrs.offLabel);
 			}
 			if (angular.isUndefined(attrs.knobLabel)) {
 				attrs.knobLabel = '\u00a0';
+			}else{
+				attrs.knobLabel = $translate.instant(attrs.knobLabel);
 			}
 			if (angular.isUndefined(attrs.isDisabled)) {
 				attrs.isDisabled = false;
 			}
 			if (angular.isUndefined(attrs.html)) {
 				attrs.html = false;
-			}
-			if (angular.isUndefined(attrs.tabindex)) {
-				attrs.tabindex = 0;
 			}
 
 			return function postLink(scope, iElement, iAttrs, ngModel) {
@@ -52,7 +56,7 @@ angular.module('toggle-switch', ['ng']).directive('toggleSwitch', ['$compile', f
 
 				var spaceCharCode = 32;
 				scope.onKeyPress = function onKeyPress($event) {
-					if ($event.charCode == spaceCharCode && !$event.altKey && !$event.ctrlKey && !$event.metaKey) {
+					if ($event.charCode === spaceCharCode && !$event.altKey && !$event.ctrlKey && !$event.metaKey) {
 						scope.toggle();
 					}
 				};
