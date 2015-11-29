@@ -1,6 +1,6 @@
 {
   "name": "angular-bootstrap-toggle-switch",
-  "version": "0.5.5",
+  "version": "0.5.6",
   "main": [
     "angular-toggle-switch.js",
     "style/bootstrap3/angular-toggle-switch-bootstrap-3.css"
